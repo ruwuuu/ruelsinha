@@ -93,7 +93,7 @@ export default memo(function About() {
 
 					<div className="about-subtitle">
 						<GraduationCap className="w-4 h-4" />
-						<span>IIT (BHU) Varanasi</span>
+						<span>IVancouver Technical</span>
 					</div>
 
 					<p className="about-description">
