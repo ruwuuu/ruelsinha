@@ -20,9 +20,9 @@ const navLinks = [
   { to: "/about", label: "About" },
   { to: "/skills", label: "Skills" },
   { to: "/academics", label: "Education" },
-  { to: "/projects", label: "Projects" },
-  { to: "/cp", label: "CP" },
-  { to: "/contact", label: "Contact" },
+  // { to: "/projects", label: "Projects" },
+  // { to: "/--", label: "" },
+  // { to: "/contact", label: "Contact" },
 ];
 
 const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
