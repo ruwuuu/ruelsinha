@@ -66,7 +66,7 @@ export default memo(function About() {
 					aria-label="Profile photo of Ruel Sinha"
 				>
 					<img
-						src="src/assets/Ruel-1-min.png"
+						src="public\assets\Ruel-1-min.png"
 						alt="Ruel Sinha"
 						loading="lazy"
 						decoding="async"
