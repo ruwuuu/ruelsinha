@@ -33,7 +33,7 @@ const SOCIAL_LINKS = [
 	},
 ];
 
-const TAGS = ['App developement', 'Rigorous and Creative Problem Solving'];
+const TAGS = [];
 
 const RESUME_URL = 'https://drive.google.com/file/d/19dJEXSdV6Hl-SLv21ZaYD5H97sucgUZp/view?usp=sharing';
 
@@ -66,7 +66,7 @@ export default memo(function About() {
 					aria-label="Profile photo of Ruel Sinha"
 				>
 					<img
-						src="/assets/Ruel Photo.jpg"
+						src="src/assets/Ruel-1-min.png"
 						alt="Ruel Sinha"
 						loading="lazy"
 						decoding="async"
@@ -93,21 +93,21 @@ export default memo(function About() {
 
 					<div className="about-subtitle">
 						<GraduationCap className="w-4 h-4" />
-						<span>IVancouver Technical</span>
+						<span>Vancouver Technical</span>
 					</div>
 
-					<p className="about-description">
+					{/* <p className="about-description">
 						I'm a passionate student with a strong interest in{' '}
 						<span className="about-description-highlight">computer engineering</span> and tackling
 						challenging problems. I love crafting efficient solutions and exploring new technologies. My
 						journey in tech combines rigorous academic training with hands-on project experience.
-					</p>
+					</p> */}
 
 					<div className="about-tags-container">{tagElements}</div>
 
 					<div className="about-links-container">
 						{socialLinksElements}
-						<a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="about-resume-link">
+						<a /* href={RESUME_URL} */ target="_blank" rel="noopener noreferrer" className="about-resume-link">
 							<FileText className="w-4 h-4" />
 							Resume
 						</a>
