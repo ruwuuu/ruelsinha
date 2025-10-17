@@ -18,11 +18,12 @@ const headerVariants = {
 
 const navLinks = [
   { to: "/about", label: "About" },
+  { to: "", label: "Education" },
   { to: "/skills", label: "Skills" },
-  { to: "/academics", label: "Education" },
-  // { to: "/projects", label: "Projects" },
-  // { to: "/aa", label: "" },
-  // { to: "/contact", label: "Contact" },
+  { to: "", label: "Volunteer Experience" },
+  { to: "/projects", label: "Projects" },
+  { to: "", label: "Work" },
+  { to: "", label: "Extracurriculars" },
 ];
 
 const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
