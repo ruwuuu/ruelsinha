@@ -77,7 +77,7 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
         </button>
       </nav>
 
-      <div className="flex max-[934px]:flex hidden items-center gap-2">
+      <div className="max-[934px]:flex hidden items-center gap-2">
         <button
           onClick={handleThemeToggle}
           type="button"
