@@ -51,7 +51,6 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
 			className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 py-4 bg-muted/70 dark:bg-muted/50 backdrop-blur-md shadow-md border-b border-border/40"
 			style={{ willChange: 'transform', transform: 'translate3d(0, 0, 0)' }}
 		>
-			{/* THE FIX: Changed Link to point to "/" */}
 			<Link
 				to="/"
 				className="text-2xl sm:text-3xl font-extrabold text-primary tracking-wide select-none hover:opacity-80 transition"
@@ -61,7 +60,6 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
 
 			<nav className="hidden min-[935px]:flex gap-2 sm:gap-4 md:gap-6 items-center">
 				{navLinks.map((link) => {
-					// THE FIX: Check for both '/' and '/about' to highlight the "About" link
 					const isActive =
 						location.pathname === link.to || (link.to === '/about' && location.pathname === '/');
 					return (

@@ -31,25 +31,30 @@ const SOCIAL_LINKS = [
 		// href: 'mailto:ruel.sinha.can@gmail.com',
 		icon: <Mail className="w-5 h-5" />,
 		title: 'Email',
-		label: 'ruel.sinha.can@gmail.com'
+		label: 'ruel.sinha.can@gmail.com',
 	},
 	{
 		//href: 'tel:+12365125602',
 		icon: <Phone className="w-5 h-5" />,
 		title: 'Phone',
-		label: '+1 (236) 512-5602'
-	}
+		label: '+1 (236) 512-5602',
+	},
 ];
 
 const TAGS = [];
-
-const RESUME_URL = 'https://drive.google.com/file/d/19dJEXSdV6Hl-SLv21ZaYD5H97sucgUZp/view?usp=sharing';
 
 export default memo(function About() {
 	const socialLinksElements = useMemo(
 		() =>
 			SOCIAL_LINKS.map(({ href, icon, title, label }) => (
-				<SocialLink key={title} href={href} icon={icon} title={title} label={label} className="about-social-link" />
+				<SocialLink
+					key={title}
+					href={href}
+					icon={icon}
+					title={title}
+					label={label}
+					className="about-social-link"
+				/>
 			)),
 		[]
 	);
@@ -106,8 +111,7 @@ export default memo(function About() {
 						I'm a student with a strong passion in{' '}
 						<span className="about-description-highlight">Software Engineering </span>
 						and
-						<span className="about-description-highlight"> Electrical Engineering</span> 
-						. 
+						<span className="about-description-highlight"> Electrical Engineering</span>.
 					</p>
 					<p className="about-description-2">
 						I want to use engineering to make an impact on the world and community around me
@@ -117,7 +121,12 @@ export default memo(function About() {
 
 					<div className="about-links-container">
 						{socialLinksElements}
-						<a /* href={RESUME_URL} */ target="_blank" rel="noopener noreferrer" className="about-resume-link">
+						<a
+							href="https://drive.google.com/file/d/1IGP0lxtPMSvdo8EfM4PTVXYR42zE5uiV/view?usp=sharing"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="about-resume-link"
+						>
 							<FileText className="w-5 h-5" />
 							Resume
 						</a>

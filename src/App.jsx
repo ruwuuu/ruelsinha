@@ -23,10 +23,10 @@ export const StaticBackground = memo(({ theme }) => {
   const lightStyles = {
     backgroundColor: 'hsl(210, 40%, 98%)', // A very light, clean, off-white
     backgroundImage: `
-      /* Faint, large radial gradients for a subtle glow effect */
-      radial-gradient(ellipse at 10% 10%, hsla(210, 100%, 94%, 0.5), transparent),
-      radial-gradient(ellipse at 90% 90%, hsla(240, 100%, 94%, 0.5), transparent),
-      /* The main grid pattern */
+      /* radial gradients */
+      radial-gradient(ellipse at 10% 10%, hsla(160, 100%, 94%, 0.5), transparent),
+      radial-gradient(ellipse at 90% 90%, hsla(200, 100%, 94%, 0.5), transparent),
+      /* grid pattern */
       linear-gradient(hsl(210, 40%, 96%) 1.5px, transparent 1.5px),
       linear-gradient(to right, hsl(210, 40%, 96%) 1.5px, hsl(210, 40%, 98%) 1.5px)
     `,
@@ -36,14 +36,16 @@ export const StaticBackground = memo(({ theme }) => {
   const darkStyles = {
     backgroundColor: 'hsl(222, 47%, 11%)', // A deep, professional navy blue
     backgroundImage: `
-      /* Faint, large radial gradients for a subtle glow effect */
-      radial-gradient(ellipse at 10% 10%, hsla(212, 96%, 15%, 0.8), transparent),
-      radial-gradient(ellipse at 90% 90%, hsla(260, 90%, 20%, 0.5), transparent),
-      /* The main grid pattern */
-      linear-gradient(hsla(222, 47%, 13%, 1) 1.5px, transparent 1.5px),
-      linear-gradient(to right, hsla(222, 47%, 13%, 1) 1.5px, hsl(222, 47%, 11%) 1.5px)
+      /* radial gradients */
+      radial-gradient(ellipse at 10% 10%, hsla(210, 96%, 11%, 8), transparent),
+      radial-gradient(ellipse at 90% 90%, hsla(210, 96%, 11%, 8), transparent),
+      radial-gradient(ellipse at 10% 90%, hsla(270, 90%, 15%, 5), transparent),
+      radial-gradient(ellipse at 90% 10%, hsla(270, 90%, 15%, 5), transparent),
+      /* grid pattern */
+      linear-gradient(hsla(120, 47%, 15%, 1) 2px, transparent 2px),
+      linear-gradient(to right, hsla(120, 47%, 15%, 1) 2px, hsl(222, 47%, 11%) 2px)
     `,
-    backgroundSize: '40px 40px',
+    backgroundSize: '45px 45px',
   };
 
   // Select the appropriate styles based on the current theme

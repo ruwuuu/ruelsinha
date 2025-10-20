@@ -78,11 +78,22 @@
   border-width: 1px;
   border-color: rgb(212 212 212);
   margin-bottom: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.about-badge:hover {
+  background-color: rgb(245 245 245);
+  transform: scale(1.05);
 }
 
 .dark .about-badge {
   background-color: #262626;
   border-color: #404040;
+}
+
+.dark .about-badge:hover {
+  background-color: #1b1b1b;
 }
 
 .about-badge-dot {
