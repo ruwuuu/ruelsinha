@@ -1,12 +1,13 @@
-import { Github, Linkedin, Mail, FileText, GraduationCap } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText, GraduationCap, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useMemo, memo } from 'react';
 import './About.css';
 
 // Memoized social link component
-const SocialLink = memo(({ href, icon, title, className }) => (
+const SocialLink = memo(({ href, icon, title, label, className }) => (
 	<a href={href} target="_blank" rel="noopener noreferrer" className={className} title={title}>
 		{icon}
+		{label ? <span className="hidden sm:inline">{label}</span> : null}
 	</a>
 ));
 SocialLink.displayName = 'SocialLink';
@@ -21,16 +22,23 @@ const SOCIAL_LINKS = [
 		icon: <Github className="w-5 h-5" />,
 		title: 'GitHub',
 	},
+	// {
+	// 	href: 'https://www.linkedin.com/in/ruel-sinha-21534a331/',
+	// 	icon: <Linkedin className="w-5 h-5" />,
+	// 	title: 'LinkedIn',
+	// },
 	{
-		href: 'https://www.linkedin.com/in/ruel-sinha-21534a331/',
-		icon: <Linkedin className="w-5 h-5" />,
-		title: 'LinkedIn',
-	},
-	{
-		// href: '',
+		// href: 'mailto:ruel.sinha.can@gmail.com',
 		icon: <Mail className="w-5 h-5" />,
 		title: 'Email',
+		label: 'ruel.sinha.can@gmail.com'
 	},
+	{
+		//href: 'tel:+12365125602',
+		icon: <Phone className="w-5 h-5" />,
+		title: 'Phone',
+		label: '+1 (236) 512-5602'
+	}
 ];
 
 const TAGS = [];
@@ -40,8 +48,8 @@ const RESUME_URL = 'https://drive.google.com/file/d/19dJEXSdV6Hl-SLv21ZaYD5H97su
 export default memo(function About() {
 	const socialLinksElements = useMemo(
 		() =>
-			SOCIAL_LINKS.map(({ href, icon, title }) => (
-				<SocialLink key={title} href={href} icon={icon} title={title} className="about-social-link" />
+			SOCIAL_LINKS.map(({ href, icon, title, label }) => (
+				<SocialLink key={title} href={href} icon={icon} title={title} label={label} className="about-social-link" />
 			)),
 		[]
 	);
@@ -101,7 +109,7 @@ export default memo(function About() {
 						<span className="about-description-highlight"> Electrical Engineering</span> 
 						. 
 					</p>
-					<p className="about-description">
+					<p className="about-description-2">
 						I want to use engineering to make an impact on the world and community around me
 					</p>
 
@@ -110,7 +118,7 @@ export default memo(function About() {
 					<div className="about-links-container">
 						{socialLinksElements}
 						<a /* href={RESUME_URL} */ target="_blank" rel="noopener noreferrer" className="about-resume-link">
-							<FileText className="w-4 h-4" />
+							<FileText className="w-5 h-5" />
 							Resume
 						</a>
 					</div>
