@@ -56,7 +56,6 @@ export default memo(function About() {
 			className="about-container"
 		>
 			<div className="about-content-wrapper">
-				{/* Profile Image */}
 				<motion.div
 					initial={{ opacity: 0, x: -40 }}
 					animate={{ opacity: 1, x: 0 }}
@@ -66,7 +65,7 @@ export default memo(function About() {
 					aria-label="Profile photo of Ruel Sinha"
 				>
 					<img
-						src="public\assets\Ruel-1-min.png"
+						src="public\assets\Ruel-1-min.jpg"
 						alt="Ruel Sinha"
 						loading="lazy"
 						decoding="async"
@@ -75,7 +74,6 @@ export default memo(function About() {
 					/>
 				</motion.div>
 
-				{/* Content */}
 				<motion.div
 					initial={{ opacity: 0, x: 40 }}
 					animate={{ opacity: 1, x: 0 }}
@@ -96,12 +94,16 @@ export default memo(function About() {
 						<span>Vancouver Technical</span>
 					</div>
 
-					{/* <p className="about-description">
-						I'm a passionate student with a strong interest in{' '}
-						<span className="about-description-highlight">computer engineering</span> and tackling
-						challenging problems. I love crafting efficient solutions and exploring new technologies. My
-						journey in tech combines rigorous academic training with hands-on project experience.
-					</p> */}
+					<p className="about-description">
+						I'm a student with a strong passion in{' '}
+						<span className="about-description-highlight">Software Engineering </span>
+						and
+						<span className="about-description-highlight"> Electrical Engineering</span> 
+						. 
+					</p>
+					<p className="about-description">
+						I want to use engineering to make an impact on the world and community around me
+					</p>
 
 					<div className="about-tags-container">{tagElements}</div>
 
