@@ -20,8 +20,8 @@ const navLinks = [
 	{ to: '/about', label: 'About' },
 	{ to: '/academics', label: 'Education' },
 	{ to: '/skills', label: 'Skills' },
-	{ to: '', label: 'Volunteering' },
-	{ to: '', label: 'Projects' },
+	{ to: '/volunteering', label: 'Volunteering' },
+	{ to: 'aa', label: 'Projects' },
 	{ to: '', label: 'Work' },
 	{ to: '', label: 'Extracurriculars' },
 ];

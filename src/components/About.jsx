@@ -108,8 +108,8 @@ export default memo(function About() {
 					</div>
 
 					<p className="about-description">
-						I'm a student with a strong passion in{' '}
-						<span className="about-description-highlight">Software Engineering </span>
+						I'm a student with a strong passion in
+						<span className="about-description-highlight"> Software Engineering </span>
 						and
 						<span className="about-description-highlight"> Electrical Engineering</span>.
 					</p>

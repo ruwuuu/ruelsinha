@@ -12,8 +12,8 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Academics from "./components/Academics";
 import Projects from "./components/Projects";
-import aa from "./components/aa";
 import Contact from "./components/Contact";
+import Volunteering from "./components/Volunteering";
 
 // --- NEW AWESOME BACKGROUND ---
 // This new background uses layered CSS gradients to create a subtle, professional blueprint/grid effect.
@@ -75,8 +75,8 @@ const AnimatedRoutes = memo(() => {
         { path: "/skills", Component: Skills },
         { path: "/academics", Component: Academics },
         { path: "/projects", Component: Projects },
-        { path: "/aa", Component: aa },
         { path: "/contact", Component: Contact },
+        { path: "/volunteering", Component: Volunteering },
     ];
     
     return (

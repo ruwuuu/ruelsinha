@@ -8,7 +8,7 @@ const navLinks = [
 	{ to: '/about', icon: User, text: 'About' },
 	{ to: '/academics', icon: GraduationCap, text: 'Education' },
 	{ to: '/skills', icon: BrainCircuit, text: 'Skills' },
-	{ to: '', icon: Handshake, text: 'Volunteering' },
+	{ to: '/volunteering', icon: Handshake, text: 'Volunteering' },
 	{ to: '', icon: FolderKanban, text: 'Projects' },
 	{ to: '', icon: BriefcaseBusiness, text: 'Work' },
 	{ to: '', icon: Music, text: 'Extracurriculars' },

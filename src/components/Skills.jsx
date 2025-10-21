@@ -87,7 +87,7 @@ const SKILLS_SECTIONS = [
 		title: 'Programming Languages',
 		tags: ['Java', 'JavaScript', 'Python', 'HTML', 'CSS'],
 	},
-	{ icon: <Layers className="w-6 h-6" />, title: 'Frameworks & Libraries', tags: ['React', 'Tailwind CSS', 'NumPy'] },
+	{ icon: <Layers className="w-6 h-6" />, title: 'Frameworks & Libraries', tags: ['React', 'NumPy'] },
 	{
 		icon: <Terminal className="w-6 h-6" />,
 		title: 'Tools & Platforms',
@@ -96,7 +96,7 @@ const SKILLS_SECTIONS = [
 	{
 		icon: <Sparkles className="w-6 h-6" />,
 		title: 'Interests',
-		tags: ['App Developement', 'Math and Physics', 'Problem Solving'],
+		tags: ['Engineering and Design', 'Math and Physics', 'Problem Solving'],
 	},
 ];
 
