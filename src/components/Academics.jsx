@@ -1,5 +1,5 @@
 import React, { useMemo, memo } from "react";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, NotebookPen } from "lucide-react";
 import { motion } from "framer-motion";
 
 // --- Animation Variants (The "Staggered Entrance" Pattern) ---
@@ -29,14 +29,17 @@ const itemVariants = {
 
 
 // --- Child Component (No changes needed) ---
-const EducationCard = memo(({ education }) => {
-  const { logo, alt, title, link, institute, year, scoreLabel, score } = education;
+const AchievementCard = memo(({ achievement }) => {
+  const { logo, alt, title, link, institute, year, scoreLabel, score, height = 9 } = achievement;
+
+  const style = {height: `${height}rem`}
 
   return (
     // This card is now an item in the list's stagger animation
     <motion.div
       variants={itemVariants}
-      className="bg-white/90 dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-700 rounded-2xl shadow p-6 flex items-center gap-6"
+      className="bg-white/90 dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-700 rounded-2xl shadow p-6 flex items-center gap-6 mb-8"
+      style={style}
     >
       <div className="w-16 h-16 flex-shrink-0 bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center shadow rounded-xl p-1 overflow-hidden">
         <img
@@ -72,30 +75,42 @@ const EducationCard = memo(({ education }) => {
     </motion.div>
   );
 });
-EducationCard.displayName = "EducationCard";
+AchievementCard.displayName = "AchievementCard";
 
 
 // --- Static Data (No changes needed) ---
 const ACADEMICS_DATA = [
   {
-    // logo: "/assets/logos/iit_bhu.png",
-    alt: "VanTech Logo",
-    title: "Vancouver Technical Secondary School",
-    // link: "https://iitbhu.ac.in/dept/civ",
-    institute: "SUMMIT Mini School accelerated program",
-    year: "2021 – 2026",
-    scoreLabel: "Academic Average",
-    score: "99.5%",
+    logo: "",
+    alt: "",
+    title: "",
+    link: "",
+    institute: "",
+    year: "",
+    scoreLabel: "",
+    score: "",
   },
 ];
+
+const EDUCATION_DATA = {
+  logo: "/assets/VanTech.jpg",
+  alt: "VanTech Logo",
+  title: "Vancouver Technical Secondary School",
+  link: "https://www.vsb.bc.ca/vancouver-technical",
+  institute: "SUMMIT Mini School accelerated program",
+  year: "2021 – 2026",
+  scoreLabel: "Academic Average",
+  score: "100%",
+  height: 10.5
+}
 
 
 // --- Main Academics Component ---
 const AcademicsComponent = memo(function Academics() {
-  const educationCards = useMemo(
+  const achievementCards = useMemo(
     () =>
-      ACADEMICS_DATA.map((education, index) => (
-        <EducationCard key={`${education.title}-${index}`} education={education} />
+      ACADEMICS_DATA.map((achievement, index) => (
+        <AchievementCard key={`${achievement.title}-${index}`} achievement={achievement} />
       )),
     []
   );
@@ -110,25 +125,34 @@ const AcademicsComponent = memo(function Academics() {
         animate="visible"
         className="flex flex-col items-center w-full"
       >
-        {/* Item 1: The header text block */}
+
         <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
-            <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 flex items-center gap-4 text-foreground">
+            <h1 className="text-4xl sm:text-5xl font-bold text-center mb-8 flex items-center gap-4 text-foreground">
                 <GraduationCap className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
                 Education
-            </h2>
-            <motion.p variants={itemVariants} className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-                My academic journey has been a blend of rigorous learning and practical
-                application, spanning general academics, pure engineering, and applied engineering. Here are the
-                institutions and milestones that have shaped my foundation.
-            </motion.p>
+            </h1>
         </motion.div>
 
-        {/* Item 2: The entire list of education cards */}
         <motion.div
-          variants={containerVariants} // It's also a container for its own children
+          variants={containerVariants}
+          className="w-full max-w-3xl flex flex-col gap-8"
+        >
+          <AchievementCard achievement={EDUCATION_DATA} />
+          
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
+            <h1 className="text-4xl sm:text-5xl font-bold text-center mb-8 flex items-center gap-4 text-foreground">
+                <NotebookPen className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
+                Achievements
+            </h1>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
           className="w-full max-w-2xl flex flex-col gap-8"
         >
-          {educationCards}
+          {achievementCards}
         </motion.div>
       </motion.div>
     </div>

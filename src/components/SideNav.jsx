@@ -6,12 +6,12 @@ import { Link, useLocation } from 'react-router-dom';
 // Move static data outside component
 const navLinks = [
 	{ to: '/about', icon: User, text: 'About' },
-	{ to: '', icon: GraduationCap, text: 'Education' },
+	{ to: '/academics', icon: GraduationCap, text: 'Education' },
 	{ to: '/skills', icon: BrainCircuit, text: 'Skills' },
-  { to: '', icon: Handshake, text: 'Volunteering' },
+	{ to: '', icon: Handshake, text: 'Volunteering' },
 	{ to: '', icon: FolderKanban, text: 'Projects' },
-  { to: '', icon: BriefcaseBusiness, text: 'Work' },
-  { to: '', icon: Music, text: 'Extracurriculars' }
+	{ to: '', icon: BriefcaseBusiness, text: 'Work' },
+	{ to: '', icon: Music, text: 'Extracurriculars' },
 ];
 
 // Animation variants
