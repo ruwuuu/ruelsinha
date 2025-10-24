@@ -55,7 +55,7 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
 				to="/"
 				className="text-2xl sm:text-3xl font-extrabold text-primary tracking-wide select-none hover:opacity-80 transition"
 			>
-				Ruel Sinha (WIP)
+				Ruel Sinha (WIP-27)
 			</Link>
 
 			<nav className="hidden min-[935px]:flex gap-2 sm:gap-4 md:gap-6 items-center">
