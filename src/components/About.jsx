@@ -31,7 +31,7 @@ const SOCIAL_LINKS = [
     // href: 'mailto:ruel.sinha.can@gmail.com',
     icon: <Mail className="w-5 h-5" />,
     title: 'Email',
-    label: 'ruel.sinha.**@gmail.com',
+    label: 'ruel.sinha.***@gmail.com',
   },
   {
     //href: 'tel:+12365125602',

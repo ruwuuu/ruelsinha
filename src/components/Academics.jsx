@@ -96,10 +96,10 @@ const EDUCATION_DATA = {
   link: 'https://www.vsb.bc.ca/vancouver-technical',
   institute: 'SUMMIT Mini School accelerated program',
   year: 'Sept 2021 – June 2026',
-  scoreLabel: 'STEM Academic Average for Grade 11 & 12',
+  scoreLabel: 'Current STEM Academic Average',
   score: '100%',
-  scoreLabel: 'STEM + English Academic Average for Grade 11 & 12',
-  score: '99.7%',
+  // scoreLabel: 'Full Academic Average',        need a new variable, like "scoreLabel2"
+  // score: '99.7%',
   height: 10.5,
 };
 
