@@ -31,13 +31,13 @@ const SOCIAL_LINKS = [
     // href: 'mailto:ruel.sinha.can@gmail.com',
     icon: <Mail className="w-5 h-5" />,
     title: 'Email',
-    label: 'ruel.sinha.can@gmail.com',
+    label: 'ruel.sinha.**@gmail.com',
   },
   {
     //href: 'tel:+12365125602',
     icon: <Phone className="w-5 h-5" />,
     title: 'Phone',
-    label: '+1 (236) 512-5602',
+    label: '+1 (236) 512-****',
   },
 ];
 
