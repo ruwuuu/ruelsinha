@@ -1,0 +1,53 @@
+import { BasePlugin, PluginRegistry } from '@embedpdf/core';
+import { InteractionManagerCapability, InteractionManagerPluginConfig, InteractionManagerState, RegisterAlwaysOptions } from './types';
+import { InteractionManagerAction } from './actions';
+export declare class InteractionManagerPlugin extends BasePlugin<InteractionManagerPluginConfig, InteractionManagerCapability, InteractionManagerState, InteractionManagerAction> {
+    static readonly id: "interaction-manager";
+    private modes;
+    private cursorClaims;
+    private buckets;
+    private alwaysGlobal;
+    private alwaysPage;
+    private pageActivities;
+    private readonly onModeChange$;
+    private readonly onHandlerChange$;
+    private readonly onCursorChange$;
+    private readonly onStateChange$;
+    private readonly onPageActivityChange$;
+    constructor(id: string, registry: PluginRegistry, config: InteractionManagerPluginConfig);
+    protected onDocumentLoadingStarted(documentId: string): void;
+    protected onDocumentClosed(documentId: string): void;
+    protected buildCapability(): InteractionManagerCapability;
+    private createInteractionScope;
+    private getDocumentState;
+    private getDocumentStateOrThrow;
+    private activate;
+    private activateDefaultMode;
+    private setDefaultMode;
+    private getActiveMode;
+    private getActiveInteractionMode;
+    private activeModeIsExclusive;
+    private pause;
+    private resume;
+    private isPaused;
+    private registerMode;
+    private registerHandlers;
+    registerAlways({ scope, handlers }: RegisterAlwaysOptions): () => void;
+    private getHandlersForScope;
+    private setCursor;
+    private removeCursor;
+    private getCurrentCursor;
+    private emitCursor;
+    private claimPageActivity;
+    private releasePageActivity;
+    private hasPageActivity;
+    /** Helper: does any topic point to this page? */
+    private pageHasAnyTopic;
+    /** Helper: count topics on a page */
+    private countTopicsOnPage;
+    private notifyHandlersActive;
+    private notifyHandlersInactive;
+    onStoreUpdated(prevState: InteractionManagerState, newState: InteractionManagerState): void;
+    initialize(_: InteractionManagerPluginConfig): Promise<void>;
+    destroy(): Promise<void>;
+}

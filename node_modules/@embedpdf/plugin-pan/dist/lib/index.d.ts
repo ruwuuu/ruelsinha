@@ -1,0 +1,10 @@
+import { PluginPackage } from '@embedpdf/core';
+import { PanPlugin } from './pan-plugin';
+import { PanPluginConfig, PanState } from './types';
+import { PanAction } from './actions';
+export declare const PanPluginPackage: PluginPackage<PanPlugin, PanPluginConfig, PanState, PanAction>;
+export * from './pan-plugin';
+export * from './types';
+export * from './manifest';
+export * from './actions';
+export * from './reducer';

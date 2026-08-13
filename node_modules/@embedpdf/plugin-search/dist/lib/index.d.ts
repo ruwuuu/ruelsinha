@@ -1,0 +1,10 @@
+import { PluginPackage } from '@embedpdf/core';
+import { SearchPlugin } from './search-plugin';
+import { SearchPluginConfig, SearchState } from './types';
+import { initialState, initialSearchDocumentState } from './reducer';
+import { SearchAction } from './actions';
+export declare const SearchPluginPackage: PluginPackage<SearchPlugin, SearchPluginConfig, SearchState, SearchAction>;
+export * from './search-plugin';
+export * from './types';
+export * from './manifest';
+export { initialState, initialSearchDocumentState };

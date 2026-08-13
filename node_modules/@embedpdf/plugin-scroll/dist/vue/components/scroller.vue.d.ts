@@ -1,0 +1,28 @@
+interface ScrollerProps {
+    documentId: string;
+}
+declare var __VLS_1: {
+    page: {
+        pageNumber: number;
+        pageIndex: number;
+        x: number;
+        y: number;
+        width: number;
+        height: number;
+        rotatedWidth: number;
+        rotatedHeight: number;
+        elevated: boolean;
+    };
+};
+type __VLS_Slots = {} & {
+    default?: (props: typeof __VLS_1) => any;
+};
+declare const __VLS_base: import('vue').DefineComponent<ScrollerProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<ScrollerProps> & Readonly<{}>, {}, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
+declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;
+declare const _default: typeof __VLS_export;
+export default _default;
+type __VLS_WithSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};

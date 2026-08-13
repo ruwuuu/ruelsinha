@@ -1,0 +1,11 @@
+import { PluginPackage } from '@embedpdf/core';
+import { FullscreenPluginConfig, FullscreenState } from './types';
+import { FullscreenPlugin } from './fullscreen-plugin';
+import { initialState } from './reducer';
+import { FullscreenAction } from './actions';
+export declare const FullscreenPluginPackage: PluginPackage<FullscreenPlugin, FullscreenPluginConfig, FullscreenState, FullscreenAction>;
+export * from './fullscreen-plugin';
+export * from './types';
+export * from './manifest';
+export * from './actions';
+export { initialState };

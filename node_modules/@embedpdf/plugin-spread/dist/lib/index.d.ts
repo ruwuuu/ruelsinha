@@ -1,0 +1,10 @@
+import { PluginPackage } from '@embedpdf/core';
+import { SpreadPlugin } from './spread-plugin';
+import { SpreadPluginConfig, SpreadState } from './types';
+import { SpreadAction } from './actions';
+export declare const SpreadPluginPackage: PluginPackage<SpreadPlugin, SpreadPluginConfig, SpreadState, SpreadAction>;
+export * from './spread-plugin';
+export * from './types';
+export * from './manifest';
+export * from './actions';
+export * from './reducer';

@@ -1,0 +1,10 @@
+import { PluginPackage } from '@embedpdf/core';
+import { CapturePluginConfig, CaptureState } from './types';
+import { CapturePlugin } from './capture-plugin';
+import { CaptureAction } from './actions';
+export declare const CapturePluginPackage: PluginPackage<CapturePlugin, CapturePluginConfig, CaptureState, CaptureAction>;
+export * from './capture-plugin';
+export * from './types';
+export * from './manifest';
+export * from './actions';
+export * from './reducer';

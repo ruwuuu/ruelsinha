@@ -1,0 +1,11 @@
+import { PluginPackage } from '@embedpdf/core';
+import { StampPluginConfig, StampState } from './types';
+import { StampPlugin } from './stamp-plugin';
+import { StampAction } from './actions';
+export declare const StampPluginPackage: PluginPackage<StampPlugin, StampPluginConfig, StampState, StampAction>;
+export * from './stamp-plugin';
+export * from './types';
+export * from './manifest';
+export * from './actions';
+export * from './reducer';
+export { RUBBER_STAMP_TOOL_ID } from './tools';

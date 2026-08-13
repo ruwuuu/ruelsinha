@@ -1,0 +1,10 @@
+import { PluginPackage } from '@embedpdf/core';
+import { FormPluginConfig, FormState } from './types';
+import { FormPlugin } from './form-plugin';
+import { FormAction } from './actions';
+export declare const FormPluginPackage: PluginPackage<FormPlugin, FormPluginConfig, FormState, FormAction>;
+export * from './form-plugin';
+export * from './types';
+export * from './manifest';
+export * from './tools';
+export { initialState, initialDocumentState } from './reducer';
