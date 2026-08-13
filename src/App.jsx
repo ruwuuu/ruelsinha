@@ -9,7 +9,6 @@ import Skills from './components/Skills';
 import Academics from './components/Academics';
 import Projects from './components/Projects';
 import Work from './components/Work';
-import Contact from './components/Contact';
 import Music from './components/Music';
 import Leadership from './components/Leadership';
 export const StaticBackground = memo(({ theme }) => {
@@ -61,7 +60,6 @@ const AnimatedRoutes = memo(() => {
     { path: '/skills', Component: Skills },
     { path: '/projects', Component: Projects },
     { path: '/work', Component: Work },
-    { path: '/contact', Component: Contact }
   ];
 
   return (

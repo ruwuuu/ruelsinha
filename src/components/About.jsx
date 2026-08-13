@@ -1,11 +1,16 @@
-import { Github, Mail, FileText, GraduationCap, Phone, Music2, ArrowUpRight } from 'lucide-react';
+import { Github, Mail, FileText, GraduationCap, Phone, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useMemo, memo } from 'react';
-import './About.css';
 
 // Memoized social link component
 const SocialLink = memo(({ href, icon, title, label, className }) => (
-	<a href={href} target="_blank" rel="noopener noreferrer" className={className} title={title}>
+	<a
+		href={href}
+		target="_blank"
+		rel="noopener noreferrer"
+		className={className}
+		title={title}
+	>
 		{icon}
 		{label ? <span className="hidden sm:inline">{label}</span> : null}
 	</a>
@@ -13,22 +18,26 @@ const SocialLink = memo(({ href, icon, title, label, className }) => (
 SocialLink.displayName = 'SocialLink';
 
 // Memoized tag component
-const Tag = memo(({ tag }) => <span className="about-tag">{tag}</span>);
+const Tag = memo(({ tag }) => (
+	<span className="rounded-full border border-neutral-300 bg-neutral-100 px-4 py-1.5 text-xs font-medium text-neutral-700 transition hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700">
+		{tag}
+	</span>
+));
 Tag.displayName = 'Tag';
 
 const SOCIAL_LINKS = [
 	{
 		href: 'https://github.com/ruwuuu',
-		icon: <Github className="w-5 h-5" />,
+		icon: <Github className="h-5 w-5" />,
 		title: 'GitHub',
 	},
 	{
-		icon: <Mail className="w-5 h-5" />,
+		icon: <Mail className="h-5 w-5" />,
 		title: 'Email',
 		label: 'ruel.sinha.can@gmail.com',
 	},
 	{
-		icon: <Phone className="w-5 h-5" />,
+		icon: <Phone className="h-5 w-5" />,
 		title: 'Phone',
 		label: '+1 (236) 512-****',
 	},
@@ -46,7 +55,7 @@ export default memo(function About() {
 					icon={icon}
 					title={title}
 					label={label}
-					className="about-social-link"
+					className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-neutral-300 bg-white px-4 text-neutral-600 transition duration-150 hover:scale-[1.05] hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800"
 				/>
 			)),
 		[],
@@ -59,97 +68,79 @@ export default memo(function About() {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			transition={{ duration: 0.6 }}
-			className="about-container"
+			className="w-full flex flex-col items-start justify-start"
 		>
-			<div className="about-content-wrapper grid gap-1 md:gap-2 md:grid-cols-2 items-start">
-				<div className="about-left flex flex-col items-center md:justify-start md:self-start">
+			<div className="mx-auto w-full max-w-280 gap-8 px-4 pb-4 pt-8 md:grid md:grid-cols-2 md:items-start">
+				<div className="flex flex-col items-center md:justify-start md:self-start">
 					<img
 						src="/assets/ruel-sinha-resume-2026.jpg"
+						alt="Ruel Sinha"
+						className="w-full rounded-xl object-cover shadow-sm"
 					/>
-
-					{/*		IMAGE
-					<motion.div
-						initial={{ opacity: 0, y: 0 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6 }}
-						className="about-profile-image w-56 h-56 md:w-64 md:h-64 mx-auto"
-						tabIndex={0}
-						aria-label="Profile photo of Ruel Sinha"
-					>
-						<img
-							src="/assets/Ruel-1-min.jpg"
-							alt="Ruel Sinha"
-							loading="lazy"
-							decoding="async"
-							className="object-cover w-full h-full rounded-lg"
-							style={{ aspectRatio: '1/1' }}
-						/>
-					</motion.div> */}
-
-					{/*		RESUME BUTTON (replaced with pdf viewer)
-					<div className="mt-4">
-						<a
-							href="/assets/ruel-sinha-resume-2026.pdf"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="inline-flex items-center justify-center whitespace-nowrap gap-2 px-6 py-3 bg-white text-black! rounded-lg hover:bg-gray-200 transition-colors font-bold shadow-sm text-sm border border-neutral-200 cursor-pointer"
-							style={{ backgroundColor: 'white', color: 'black' }}
-						>
-							<FileText className="w-4 h-4 shrink-0" />
-							<span>Resume</span>
-							<ArrowUpRight className="w-4 h-4 shrink-0" />
-						</a>
-					</div> */}
 				</div>
 
-				<div className="flex flex-col gap-8 ml-2">
+				<div className="ml-2 flex flex-col gap-8">
 					<motion.div
 						initial={{ opacity: 0, x: 40 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.6 }}
-						className="about-content"
+						className="flex flex-1 flex-col items-center md:items-start"
 					>
-						<div className="about-badge">
-							<div className="about-badge-dot" />
-							<span className="about-badge-text">About Me</span>
+						<div className="mb-4 inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-neutral-200/50 px-4 py-2 select-none dark:border-neutral-700 dark:bg-neutral-800/80">
+							<div className="h-2 w-2 animate-pulse rounded-full bg-neutral-900 dark:bg-neutral-100" />
+							<span className="text-base font-semibold uppercase tracking-[0.05em] text-neutral-900 dark:text-neutral-100">
+								About Me
+							</span>
 						</div>
 
-						<h1 className="about-title text-2xl md:text-xl">
-							Hi, I'm <span className="about-title-gradient">Ruel Sinha</span>
+						<h1 className="mb-3 text-center text-2xl font-bold leading-tight text-neutral-900 md:text-left md:text-[1.75rem] dark:text-neutral-50">
+							Hi, I'm <span className="bg-linear-to-r from-neutral-900 via-neutral-700 to-neutral-500 bg-clip-text text-transparent dark:from-white dark:via-[#dacec4] dark:to-[#bdaea2]">Ruel Sinha</span>
 						</h1>
 
-						<div className="about-subtitle">
-							<GraduationCap className="w-4 h-4" />
-							<a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer">
+						<div className="mb-2 flex items-center justify-center gap-2 text-[0.9rem] leading-5 text-neutral-500 md:justify-start">
+							<GraduationCap className="h-4 w-4" />
+							<a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-700 dark:hover:text-neutral-200">
 								University of Waterloo
 							</a>
 						</div>
 
-						<p className="about-description">
+						<p className="mb-2 max-w-184 text-center text-base leading-7 text-neutral-500 md:text-left md:text-lg dark:text-neutral-400">
 							I’m an incoming student at the University of Waterloo for
-							<span className="about-description-highlight"> Honours Software Engineering, Co-op</span>.
+							<span className="font-medium text-neutral-900 dark:text-neutral-50"> Honours Software Engineering, Co-op</span>.
 						</p>
 
-						<div className="about-tags-container">{tagElements}</div>
+						<div className="mt-2 flex flex-wrap justify-center gap-4 md:justify-start">{socialLinksElements}</div>
+						<div className="mt-2 flex flex-wrap justify-center gap-2 md:justify-start">{tagElements}</div>
 					</motion.div>
 
 					<motion.div
 						initial={{ opacity: 0, x: 40 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.6 }}
-						className="about-content"
+						className="flex flex-1 flex-col items-center md:items-start"
 					>
-						<div className="about-badge">
-							<div className="about-badge-dot" />
-							<span className="about-badge-text">CAREER VISION &amp; GOALS</span>
+						<div className="mb-4 inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-neutral-200/50 px-4 py-2 select-none dark:border-neutral-700 dark:bg-neutral-800/80">
+							<div className="h-2 w-2 animate-pulse rounded-full bg-neutral-900 dark:bg-neutral-100" />
+							<span className="text-base font-semibold uppercase tracking-[0.05em] text-neutral-900 dark:text-neutral-100">
+								Career Vision
+							</span>
 						</div>
 
-						<p className="about-description">
-							<span className="about-description-highlight">Tech Innovation:</span> I want to combine
-							foundations in Programming, Mathematics, and Engineering to innovate software and devices
-							that progress the world around us.
+						<p className="max-w-184 text-center text-base leading-7 text-neutral-500 md:text-left md:text-lg dark:text-neutral-400">
+							I want to combine foundations in Programming, Mathematics, and Engineering to innovate software and devices that progress the world around us.
 						</p>
-						<div className="about-tags-container">{tagElements}</div>
+						<div className="mt-4">
+							<a
+								href="/assets/ruel-sinha-resume-2026.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-neutral-200 bg-white px-4 py-3 text-base font-bold text-black shadow-sm transition hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+							>
+								<FileText className="h-5 w-5 shrink-0" />
+								<span>Resume</span>
+								<ArrowUpRight className="h-5 w-5 shrink-0" />
+							</a>
+						</div>
 					</motion.div>
 				</div>
 			</div>
