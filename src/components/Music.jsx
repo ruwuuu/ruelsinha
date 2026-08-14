@@ -24,7 +24,7 @@ const itemVariants = {
 	},
 };
 
-const MusicSection = memo(({ title, instruments, items, certificates, onCertClick }) => (
+const MusicSection = memo(({ title, instruments, items, onCertClick }) => (
 	<motion.div
 		variants={itemVariants}
 		className="rounded-2xl bg-white/90 dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-700 shadow p-6"
@@ -48,51 +48,22 @@ const MusicSection = memo(({ title, instruments, items, certificates, onCertClic
 			{items.map((item, i) => {
 				const itemText = typeof item === 'string' ? item : item.text;
 				const itemLinks = typeof item === 'object' ? item.links : null;
-				const colonIndex = itemText.indexOf(':');
 
 				if (itemLinks) {
 					return (
 						<li key={i}>
 							<div className="flex items-start gap-2">
 								<span className="flex-1">
-									<strong>{itemText.substring(0, colonIndex)}</strong>
-									{itemText.substring(colonIndex)}
+									{itemText}
 								</span>
 								<span className="flex gap-2 shrink-0"></span>
 							</div>
 						</li>
 					);
 				}
-
-				if (colonIndex > 0) {
-					return (
-						<li key={i}>
-							<strong>{itemText.substring(0, colonIndex)}</strong>
-							{itemText.substring(colonIndex)}
-						</li>
-					);
-				}
 				return <li key={i}>{itemText}</li>;
 			})}
 		</ul>
-		{certificates && certificates.length > 0 && (
-			<div className="mt-6 pt-6 border-t border-neutral-200 dark:border-neutral-700">
-				<div className="flex flex-wrap justify-center gap-3">
-					{certificates.map((cert, i) => (
-						<motion.button
-							key={i}
-							onClick={() => onCertClick(cert.src)}
-							whileHover={{ scale: 1.05 }}
-							whileTap={{ scale: 0.95 }}
-							className="inline-flex items-center justify-center whitespace-nowrap gap-2 px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition-colors font-bold text-sm cursor-pointer border border-neutral-200 shadow-sm"
-						>
-							{cert.label}
-							<ArrowUpRight className="w-4 h-4 shrink-0" />
-						</motion.button>
-					))}
-				</div>
-			</div>
-		)}
 	</motion.div>
 ));
 MusicSection.displayName = 'MusicSection';
@@ -262,25 +233,12 @@ const VIDEO_DATA = [
 const MUSIC_DATA = {
 	title: 'Musical Achievements',
 	items: [
-		'School Jazz Band - Principal Trombonist: Help junior students develop musical technique and theory',
-		"School Orchestra: 'Outstanding Achievement' award",
-		{
-			text: "Royal Conservatory of Music: Pursuing Piano Level 6",
-			links: [
-				{ url: 'https://www.instagram.com/p/DP-PE8egcTV/?igsh=ajFvYnYzdHY3aG5t', label: 'Instagram' },
-				{ url: 'https://www.facebook.com/share/p/1YhbritXBP/', label: 'Facebook' },
-			],
-		},
-		'District Honour Band (2023, 2024)',
 		'BC Provincial Honour Orchestra (2024, 2025)',
+		"Royal Conservatory of Music: Piano Level 6",
+		"School Jazz Band - Principal Trombonist",
+		'District Honour Band (2023, 2024)',
 	],
 };
-
-const CERTIFICATES_BOX1 = [
-	{ src: '/assets/certs/Music/piano-level-4.jpg', label: 'Piano Level 4' },
-	{ src: '/assets/certs/Music/String-2025.jpg', label: 'Senior Strings' },
-	{ src: '/assets/certs/Music/band-section-leader-2023.jpg', label: 'Band Section Leader' },
-];
 
 const MusicComponent = memo(function Music() {
 	const [selectedCert, setSelectedCert] = useState(null);
@@ -313,7 +271,6 @@ const MusicComponent = memo(function Music() {
 						key={MUSIC_DATA.title}
 						title={MUSIC_DATA.title}
 						items={MUSIC_DATA.items}
-						certificates={CERTIFICATES_BOX1}
 						onCertClick={setSelectedCert}
 					/>
 				</div>

@@ -16,13 +16,20 @@ const socialLinks = [
 		isStatic: true,
 		href: "tel:+12365125602"
 	},
+	{
+		icon: Github,
+		title: 'GitHub',
+		label: 'GitHub',
+		isStatic: false,
+		href: 'https://github.com/ruwuuu'
+	}
 ];
 
 const Footer = memo(() => {
 	return (
 		<footer className="w-full bg-muted/30 border-t border-border pt-8 pb-10 mt-32">
 			<div className="max-w-5xl mx-auto px-4 sm:px-8 flex flex-col items-center text-center gap-5">
-				<div className="text-sm text-muted-foreground">© 2026 Ruel Sinha. All rights reserved.</div>
+				{/* <div className="text-sm text-muted-foreground">© 2026 Ruel Sinha. All rights reserved.</div> */}
 				<div className="flex justify-center gap-6">
 					{socialLinks.map(({ href, title, icon: Icon, label, isStatic }) =>
 						isStatic ? (
@@ -54,7 +61,7 @@ const Footer = memo(() => {
 						<FileText className="w-5 h-5 sm:w-6 sm:h-6" />
 						<span className="ml-2 hidden sm:inline">Resume</span>
 					</a>
-					{/* <a
+					<a
 						href="https://www.linkedin.com/in/ruel-sinha-21534a331"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -64,7 +71,7 @@ const Footer = memo(() => {
 					>
 						<Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
 						<span className="ml-2 hidden sm:inline">LinkedIn</span>
-					</a> */}
+					</a>
 				</div>
 			</div>
 		</footer>

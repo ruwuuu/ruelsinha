@@ -25,24 +25,7 @@ const Tag = memo(({ tag }) => (
 ));
 Tag.displayName = 'Tag';
 
-const SOCIAL_LINKS = [
-	{
-		href: 'https://github.com/ruwuuu',
-		icon: <Github className="h-5 w-5" />,
-		title: 'GitHub',
-	},
-	{
-		icon: <Mail className="h-5 w-5" />,
-		title: 'Email',
-		label: 'ruel.sinha.can@gmail.com',
-	},
-	{
-		icon: <Phone className="h-5 w-5" />,
-		title: 'Phone',
-		label: '+1 (236) 512-****',
-	},
-];
-
+const SOCIAL_LINKS = [];
 const TAGS = [];
 
 export default memo(function About() {
@@ -86,7 +69,7 @@ export default memo(function About() {
 						transition={{ duration: 0.6 }}
 						className="flex flex-1 flex-col items-center md:items-start"
 					>
-						<div className="mb-4 inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-neutral-200/50 px-4 py-2 select-none dark:border-neutral-700 dark:bg-neutral-800/80">
+						<div className="mb-4 inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-neutral-200/50 px-4 py-2 select-none dark:border-neutral-700 dark:bg-neutral-900/80">
 							<div className="h-2 w-2 animate-pulse rounded-full bg-neutral-900 dark:bg-neutral-100" />
 							<span className="text-base font-semibold uppercase tracking-[0.05em] text-neutral-900 dark:text-neutral-100">
 								About Me
@@ -119,7 +102,7 @@ export default memo(function About() {
 						transition={{ duration: 0.6 }}
 						className="flex flex-1 flex-col items-center md:items-start"
 					>
-						<div className="mb-4 inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-neutral-200/50 px-4 py-2 select-none dark:border-neutral-700 dark:bg-neutral-800/80">
+						<div className="mb-4 inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-neutral-200/50 px-4 py-2 select-none dark:border-neutral-700 dark:bg-neutral-900/80">
 							<div className="h-2 w-2 animate-pulse rounded-full bg-neutral-900 dark:bg-neutral-100" />
 							<span className="text-base font-semibold uppercase tracking-[0.05em] text-neutral-900 dark:text-neutral-100">
 								Career Vision
@@ -134,7 +117,7 @@ export default memo(function About() {
 								href="/assets/ruel-sinha-resume-2026.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-neutral-200 bg-white px-4 py-3 text-base font-bold text-black shadow-sm transition hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-neutral-200 bg-white px-3.5 py-2.5 text-base font-bold text-black shadow-sm transition hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
 							>
 								<FileText className="h-5 w-5 shrink-0" />
 								<span>Resume</span>
