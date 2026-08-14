@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@embedpdf/core/preact"),t=require("@embedpdf/plugin-attachment");exports.useAttachmentCapability=()=>e.useCapability(t.AttachmentPlugin.id),exports.useAttachmentPlugin=()=>e.usePlugin(t.AttachmentPlugin.id),Object.keys(t).forEach(e=>{"default"===e||Object.prototype.hasOwnProperty.call(exports,e)||Object.defineProperty(exports,e,{enumerable:!0,get:()=>t[e]})});
+//# sourceMappingURL=index.cjs.map

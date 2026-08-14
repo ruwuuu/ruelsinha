@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@embedpdf/core/vue"),o=require("@embedpdf/plugin-bookmark");exports.useBookmarkCapability=()=>e.useCapability(o.BookmarkPlugin.id),exports.useBookmarkPlugin=()=>e.usePlugin(o.BookmarkPlugin.id),Object.keys(o).forEach(e=>{"default"===e||Object.prototype.hasOwnProperty.call(exports,e)||Object.defineProperty(exports,e,{enumerable:!0,get:()=>o[e]})});
+//# sourceMappingURL=index.cjs.map

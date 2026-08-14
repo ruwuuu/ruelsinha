@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"}),exports.getCounterRotation=function(t,e){const{width:i,height:r}=t.size;switch(e%4){case 1:return{matrix:`matrix(0, -1, 1, 0, 0, ${r})`,width:r,height:i};case 2:return{matrix:`matrix(-1, 0, 0, -1, ${i}, ${r})`,width:i,height:r};case 3:return{matrix:`matrix(0, 1, -1, 0, ${i}, 0)`,width:r,height:i};default:return{matrix:"matrix(1, 0, 0, 1, 0, 0)",width:i,height:r}}};
+//# sourceMappingURL=index.cjs.map

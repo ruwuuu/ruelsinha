@@ -1,0 +1,32 @@
+import { BasePlugin, PluginRegistry } from '@embedpdf/core';
+import { SearchPluginConfig, SearchCapability, SearchState } from './types';
+import { SearchAction } from './actions';
+export declare class SearchPlugin extends BasePlugin<SearchPluginConfig, SearchCapability, SearchState, SearchAction> {
+    static readonly id: "search";
+    private readonly searchStop$;
+    private readonly searchStart$;
+    private readonly searchResult$;
+    private readonly searchActiveResultChange$;
+    private readonly searchResultState$;
+    private readonly searchState$;
+    private currentTask;
+    private pluginConfig;
+    constructor(id: string, registry: PluginRegistry, config: SearchPluginConfig);
+    protected onDocumentLoadingStarted(documentId: string): void;
+    protected onDocumentClosed(documentId: string): void;
+    initialize(): Promise<void>;
+    onStoreUpdated(prevState: SearchState, newState: SearchState): void;
+    protected buildCapability(): SearchCapability;
+    private createSearchScope;
+    private setFlags;
+    private notifySearchStart;
+    private notifySearchStop;
+    private notifyActiveResultChange;
+    private startSearchSession;
+    private stopSearchSession;
+    private searchAllPages;
+    private nextResult;
+    private previousResult;
+    private goToResult;
+    destroy(): Promise<void>;
+}

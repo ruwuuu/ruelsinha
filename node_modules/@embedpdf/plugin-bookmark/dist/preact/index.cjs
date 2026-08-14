@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@embedpdf/core/preact"),r=require("@embedpdf/plugin-bookmark");exports.useBookmarkCapability=()=>e.useCapability(r.BookmarkPlugin.id),exports.useBookmarkPlugin=()=>e.usePlugin(r.BookmarkPlugin.id),Object.keys(r).forEach(e=>{"default"===e||Object.prototype.hasOwnProperty.call(exports,e)||Object.defineProperty(exports,e,{enumerable:!0,get:()=>r[e]})});
+//# sourceMappingURL=index.cjs.map
