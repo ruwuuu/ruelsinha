@@ -1,0 +1,10 @@
+import { PluginPackage } from '@embedpdf/core';
+import { ThumbnailPluginConfig, ThumbnailState } from './types';
+import { ThumbnailPlugin } from './thumbnail-plugin';
+import { ThumbnailAction } from './actions';
+export declare const ThumbnailPluginPackage: PluginPackage<ThumbnailPlugin, ThumbnailPluginConfig, ThumbnailState, ThumbnailAction>;
+export * from './thumbnail-plugin';
+export * from './types';
+export * from './manifest';
+export * from './actions';
+export * from './reducer';

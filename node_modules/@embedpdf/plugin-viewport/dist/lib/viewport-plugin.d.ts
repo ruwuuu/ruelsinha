@@ -1,0 +1,38 @@
+import { BasePlugin, PluginRegistry, Listener } from '@embedpdf/core';
+import { ViewportAction } from './actions';
+import { ViewportPluginConfig, ViewportState, ViewportCapability, ViewportScrollMetrics, ViewportInputMetrics, ScrollToPayload } from './types';
+export declare class ViewportPlugin extends BasePlugin<ViewportPluginConfig, ViewportCapability, ViewportState, ViewportAction> {
+    readonly id: string;
+    static readonly id: "viewport";
+    private readonly viewportResize$;
+    private readonly viewportMetrics$;
+    private readonly scrollMetrics$;
+    private readonly scrollActivity$;
+    private readonly gateState$;
+    private readonly scrollRequests$;
+    private readonly scrollEndDelay;
+    constructor(id: string, registry: PluginRegistry, config: ViewportPluginConfig);
+    protected onDocumentLoadingStarted(documentId: string): void;
+    protected onDocumentClosed(documentId: string): void;
+    protected buildCapability(): ViewportCapability;
+    private createViewportScope;
+    registerViewport(documentId: string): void;
+    unregisterViewport(documentId: string): void;
+    setViewportResizeMetrics(documentId: string, metrics: ViewportInputMetrics): void;
+    setViewportScrollMetrics(documentId: string, scrollMetrics: ViewportScrollMetrics): void;
+    onScrollRequest(documentId: string, listener: Listener<ScrollToPayload>): import('@embedpdf/core').Unsubscribe;
+    gate(key: string, documentId: string): void;
+    releaseGate(key: string, documentId: string): void;
+    private getViewportState;
+    private getMetrics;
+    private isScrolling;
+    private isSmoothScrolling;
+    private isGated;
+    private hasGate;
+    private getGates;
+    private scrollTo;
+    private bumpScrollActivity;
+    onStoreUpdated(prevState: ViewportState, newState: ViewportState): void;
+    initialize(_config: ViewportPluginConfig): Promise<void>;
+    destroy(): Promise<void>;
+}

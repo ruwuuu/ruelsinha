@@ -1,0 +1,16 @@
+{
+  "name": "Ruel Sinha Portfolio",
+  "short_name": "Ruel Sinha",
+  "description": "Personal portfolio showcasing academic excellence, programming projects, and achievements",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

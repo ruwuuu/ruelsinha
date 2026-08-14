@@ -1,0 +1,11 @@
+import { PluginPackage } from '@embedpdf/core';
+import { RotatePluginConfig, RotateState } from './types';
+import { RotatePlugin } from './rotate-plugin';
+import { RotateAction } from './actions';
+export declare const RotatePluginPackage: PluginPackage<RotatePlugin, RotatePluginConfig, RotateState, RotateAction>;
+export * from './rotate-plugin';
+export * from './types';
+export * from './manifest';
+export * from './actions';
+export * from './reducer';
+export * from './utils';

@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@embedpdf/core/svelte"),t=require("@embedpdf/plugin-history");exports.useHistoryCapability=()=>e.useCapability(t.HistoryPlugin.id),exports.useHistoryPlugin=()=>e.usePlugin(t.HistoryPlugin.id),Object.keys(t).forEach(e=>{"default"===e||Object.prototype.hasOwnProperty.call(exports,e)||Object.defineProperty(exports,e,{enumerable:!0,get:()=>t[e]})});
+//# sourceMappingURL=index.cjs.map

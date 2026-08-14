@@ -1,0 +1,13 @@
+import { PluginPackage } from '@embedpdf/core';
+import { UIPluginConfig, UIState } from './types';
+import { UIPlugin } from './ui-plugin';
+import { UIAction } from './actions';
+export declare const UIPluginPackage: PluginPackage<UIPlugin, UIPluginConfig, UIState, UIAction>;
+export * from './ui-plugin';
+export * from './types';
+export * from './schema';
+export * from './manifest';
+export * from './utils';
+export * from './selectors';
+export * from './actions';
+export { generateUIStylesheet, extractCategories, getStylesheetConfig, type StylesheetConfig, } from './utils/stylesheet-generator';

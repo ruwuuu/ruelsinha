@@ -1,0 +1,11 @@
+import { Ref } from 'vue';
+import { Rect, Position } from '@embedpdf/models';
+import { DragResizeConfig } from '../../shared-vue/plugin-interaction-primitives';
+export type MaybeRef<T> = T | Ref<T>;
+export declare const norm: <T>(v: MaybeRef<T>) => T;
+export declare const toNum: (n: unknown, fallback?: number) => number;
+export declare const rectDTO: (r: any) => Rect;
+export declare const vertsDTO: (arr?: any[]) => Position[];
+export declare const boolDTO: (b: unknown) => boolean | undefined;
+export declare const numDTO: (n: unknown) => number | undefined;
+export declare const constraintsDTO: (c: MaybeRef<DragResizeConfig["constraints"]> | undefined) => DragResizeConfig["constraints"] | undefined;

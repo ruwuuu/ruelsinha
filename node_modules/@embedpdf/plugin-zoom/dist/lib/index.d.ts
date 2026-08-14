@@ -1,0 +1,10 @@
+import { PluginPackage } from '@embedpdf/core';
+import { ZoomAction } from './actions';
+import { initialState, initialDocumentState } from './reducer';
+import { ZoomPluginConfig, ZoomState } from './types';
+import { ZoomPlugin } from './zoom-plugin';
+export declare const ZoomPluginPackage: PluginPackage<ZoomPlugin, ZoomPluginConfig, ZoomState, ZoomAction>;
+export * from './zoom-plugin';
+export * from './types';
+export * from './manifest';
+export { initialState, initialDocumentState };
